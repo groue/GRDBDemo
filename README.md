@@ -5,3 +5,25 @@ This repository contains an iOS application that uses the SQLite library [GRDB.s
 It displays a simple Hall of Fame of people sorted by score, and demonstrates how the [FetchedRecordsController](http://github.com/groue/GRDB.swift#fetchedrecordscontroller) class can populate a table view, and automatically update its contents when the database is modified.
 
 ![Screenshot](https://raw.githubusercontent.com/groue/GRDBDemo/master/ScreenShot.png)
+
+- [AppDelegate.swift](GRDBDemo/AppDelegate.swift)
+    
+    The app delegate opens the connection to the database, and applies the best practices of memory management
+
+- [Database.swift](GRDBDemo/Database.swift)
+    
+    Create the database file, and perform database setup: creating tables, and filling initial values.
+
+- [Person.swift](GRDBDemo/Person.swift)
+
+    Person is a subclass of the GRDB [Record class](http://github.com/groue/GRDB.swift#records), that provides fetching et persistence methods to your custom types.
+
+- [PersonEditionViewController.swift](GRDBDemo/PersonEditionViewController.swift)
+
+    A simple view controller that edits a person.
+
+- [PersonsViewController.swift](GRDBDemo/PersonsViewController.swift)
+
+    A view controller that manages its table view through a [FetchedRecordsController](http://github.com/groue/GRDB.swift#fetchedrecordscontroller). It displays a few buttons at the bottom of the screeen that perform various transformations to the database in order to demonstrate the automatic table view updates given by the fetched records controller.
+
+Happy GRDB!
