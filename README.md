@@ -8,6 +8,27 @@ It displays a simple Hall of Fame of people sorted by score, and demonstrates ho
     <img src="https://raw.githubusercontent.com/groue/GRDBDemo/master/ScreenShot.png" alt="Screen Shot">
 </p>
 
+To run this app:
+
+1. Clone the repository
+2. Install CocoaPods if not done yet, via the Terminal application:
+    
+    ```
+    sudo gem install cocoapods
+    ```
+
+3. Go into the repository, and run the Terminal command:
+
+    ```
+    cd groue/GRDBDemo
+    pod install
+    ```
+
+4. Open GRDBDemo.xcworkspace
+5. Click the Run button
+
+The main app files are:
+
 - [AppDelegate.swift](GRDBDemo/AppDelegate.swift)
     
     The app delegate opens the connection to the database, and applies the best practices of memory management
