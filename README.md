@@ -8,7 +8,8 @@ It displays a simple Hall of Fame of people sorted by score, and demonstrates ho
     <img src="https://raw.githubusercontent.com/groue/GRDBDemo/master/ScreenShot.png" alt="Screen Shot">
 </p>
 
-To run this app:
+
+#### Run The Demo App
 
 1. Clone the repository
 2. Install CocoaPods if not done yet, via the Terminal application:
@@ -27,7 +28,8 @@ To run this app:
 4. Open GRDBDemo.xcworkspace
 5. Click the Run button
 
-The main app files are:
+
+#### The Main Files
 
 - [AppDelegate.swift](GRDBDemo/AppDelegate.swift)
     
