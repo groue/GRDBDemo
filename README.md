@@ -27,5 +27,7 @@ It displays a simple Hall of Fame of people sorted by score, and demonstrates ho
 - [PersonsViewController.swift](GRDBDemo/PersonsViewController.swift)
 
     A view controller that manages its table view through a [FetchedRecordsController](http://github.com/groue/GRDB.swift#fetchedrecordscontroller). It displays a few buttons at the bottom of the screeen that perform various transformations to the database in order to demonstrate the automatic table view updates given by the fetched records controller.
+    
+    The :bomb: button spawns many concurrent threads that update the database, in order to stress test SQLite, GRDB, the fetched records controller, and UITableView.
 
-Happy GRDB!
+<p align="center"><strong>Happy GRDB!</strong></p>
