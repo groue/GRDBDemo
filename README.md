@@ -4,7 +4,9 @@ This repository contains an iOS application that uses the SQLite library [GRDB.s
 
 It displays a simple Hall of Fame of people sorted by score, and demonstrates how the [FetchedRecordsController](http://github.com/groue/GRDB.swift#fetchedrecordscontroller) class can populate a table view, and automatically update its contents when the database is modified.
 
-![Screenshot](https://raw.githubusercontent.com/groue/GRDBDemo/master/ScreenShot.png)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/groue/GRDBDemo/master/ScreenShot.png" alt="Screen Shot">
+</p>
 
 - [AppDelegate.swift](GRDBDemo/AppDelegate.swift)
     
