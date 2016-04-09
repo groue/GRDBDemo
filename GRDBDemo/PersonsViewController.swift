@@ -56,7 +56,9 @@ extension PersonsViewController : PersonEditionViewControllerDelegate {
         let controller = segue.sourceViewController as! PersonEditionViewController
         controller.applyChanges()
         if !controller.person.name.isEmpty {
-            try! controller.person.save(dbQueue)
+            try! dbQueue.inDatabase { db in
+                try controller.person.save(db)
+            }
         }
     }
     
@@ -64,7 +66,9 @@ extension PersonsViewController : PersonEditionViewControllerDelegate {
         // Person edition: back button was tapped
         controller.applyChanges()
         if !controller.person.name.isEmpty {
-            try! controller.person.save(dbQueue)
+            try! dbQueue.inDatabase { db in
+                try controller.person.save(db)
+            }
         }
     }
 }
@@ -96,7 +100,9 @@ extension PersonsViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         // Delete the person
         let person = personsController.recordAtIndexPath(indexPath)
-        try! person.delete(dbQueue)
+        try! dbQueue.inDatabase { db in
+            try person.delete(db)
+        }
     }
 }
 
