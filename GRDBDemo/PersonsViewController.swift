@@ -9,7 +9,39 @@ class PersonsViewController: UITableViewController {
         
         let request = personsSortedByScore
         personsController = FetchedRecordsController(dbQueue, request: request, compareRecordsByPrimaryKey: true)
-        personsController.delegate = self
+        personsController.trackChanges(
+            recordsWillChange: { [unowned self] _ in
+                self.tableView.beginUpdates()
+            },
+            tableViewEvent: { [unowned self] (controller, record, event) in
+                switch event {
+                case .Insertion(let indexPath):
+                    self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                    
+                case .Deletion(let indexPath):
+                    self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                    
+                case .Update(let indexPath, _):
+                    if let cell = self.tableView.cellForRowAtIndexPath(indexPath) {
+                        self.configureCell(cell, atIndexPath: indexPath)
+                    }
+                    
+                case .Move(let indexPath, let newIndexPath, _):
+                    // Actually move cells around for more demo effect :-)
+                    let cell = self.tableView.cellForRowAtIndexPath(indexPath)
+                    self.tableView.moveRowAtIndexPath(indexPath, toIndexPath: newIndexPath)
+                    if let cell = cell {
+                        self.configureCell(cell, atIndexPath: newIndexPath)
+                    }
+                    
+                    // A quieter animation:
+                    // self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                    // self.tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+                }
+            },
+            recordsDidChange: { [unowned self] _ in
+                self.tableView.endUpdates()
+            })
         personsController.performFetch()
         
         navigationItem.leftBarButtonItem = editButtonItem()
@@ -103,47 +135,6 @@ extension PersonsViewController {
         try! dbQueue.inDatabase { db in
             try person.delete(db)
         }
-    }
-}
-
-
-// MARK: - FetchedRecordsControllerDelegate
-
-extension PersonsViewController : FetchedRecordsControllerDelegate {
-    
-    func controllerWillChangeRecords<T>(controller: FetchedRecordsController<T>) {
-        tableView.beginUpdates()
-    }
-    
-    func controller<T>(controller: FetchedRecordsController<T>, didChangeRecord record: T, withEvent event:FetchedRecordsEvent) {
-        switch event {
-        case .Insertion(let indexPath):
-            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-        case .Deletion(let indexPath):
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
-        case .Update(let indexPath, _):
-            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-                configureCell(cell, atIndexPath: indexPath)
-            }
-            
-        case .Move(let indexPath, let newIndexPath, _):
-            // Actually move cells around for more demo effect :-)
-            let cell = tableView.cellForRowAtIndexPath(indexPath)
-            tableView.moveRowAtIndexPath(indexPath, toIndexPath: newIndexPath)
-            if let cell = cell {
-                configureCell(cell, atIndexPath: newIndexPath)
-            }
-            
-            // A quieter animation:
-            // tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            // tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
-        }
-    }
-    
-    func controllerDidChangeRecords<T>(controller: FetchedRecordsController<T>) {
-        tableView.endUpdates()
     }
 }
 
