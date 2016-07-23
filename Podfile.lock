@@ -1,11 +1,11 @@
 PODS:
-  - GRDB.swift (0.72.0)
+  - GRDB.swift (0.76.0)
 
 DEPENDENCIES:
   - GRDB.swift
 
 SPEC CHECKSUMS:
-  GRDB.swift: 468020013697ba5ce54c229541158f341ca4d6ad
+  GRDB.swift: f170bfddba189fc6d0e09fd3def4c94bebdfa1ee
 
 PODFILE CHECKSUM: a5e78a1d8af5d1e41571a86e25d8d50938dbcea6
 
