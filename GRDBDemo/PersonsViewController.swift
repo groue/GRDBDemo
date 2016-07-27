@@ -86,21 +86,14 @@ extension PersonsViewController : PersonEditionViewControllerDelegate {
     @IBAction func commitPersonEdition(segue: UIStoryboardSegue) {
         // Person creation: commit button was tapped
         let controller = segue.sourceViewController as! PersonEditionViewController
-        controller.applyChanges()
-        if !controller.person.name.isEmpty {
-            try! dbQueue.inDatabase { db in
-                try controller.person.save(db)
-            }
+        try! dbQueue.inDatabase { db in
+            try controller.person.save(db)
         }
     }
     
     func personEditionControllerDidComplete(controller: PersonEditionViewController) {
-        // Person edition: back button was tapped
-        controller.applyChanges()
-        if !controller.person.name.isEmpty {
-            try! dbQueue.inDatabase { db in
-                try controller.person.save(db)
-            }
+        try! dbQueue.inDatabase { db in
+            try controller.person.save(db)
         }
     }
 }

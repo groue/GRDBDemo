@@ -18,9 +18,7 @@ class PersonEditionViewController: UITableViewController {
     @IBOutlet private weak var scoreTextField: UITextField!
     
     func applyChanges() {
-        if let name = nameTextField.text where !name.isEmpty {
-            person.name = name
-        }
+        person.name = nameTextField.text ?? ""
         person.score = scoreTextField.text.flatMap { Int($0) } ?? 0
     }
     
@@ -64,11 +62,18 @@ extension PersonEditionViewController {
         return true
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Commit" {
+            applyChanges()
+        }
+    }
+    
     override func willMoveToParentViewController(parent: UIViewController?) {
         super.willMoveToParentViewController(parent)
         
         if parent == nil {
             // Self is popping from its navigation controller
+            applyChanges()
             delegate?.personEditionControllerDidComplete(self)
         }
     }
