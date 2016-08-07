@@ -26,16 +26,13 @@ func setupDatabase(application: UIApplication) {
     var migrator = DatabaseMigrator()
     
     migrator.registerMigration("CreatePersonsTable") { db in
-        // That "collation" helps us compare person names in a localized case insensitive fashion
+        // Compare person names in a localized case insensitive fashion
         // See https://github.com/groue/GRDB.swift/#unicode
-        let collation = DatabaseCollation.localizedCaseInsensitiveCompare
-        
-        try db.execute(
-            "CREATE TABLE persons (" +
-                "id INTEGER PRIMARY KEY, " +
-                "name TEXT NOT NULL COLLATE \(collation.name), " +
-                "score INTEGER NOT NULL " +
-            ")")
+        try db.create(table: "persons") { t in
+            t.column("id", .Integer).primaryKey()
+            t.column("name", .Text).notNull().collate(.localizedCaseInsensitiveCompare)
+            t.column("score", .Integer).notNull()
+        }
     }
     
     migrator.registerMigration("InitialPersons") { db in
