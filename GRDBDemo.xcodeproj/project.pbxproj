@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B85E5502C1EA864CB6D6834 /* Pods_GRDBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4209AD2518F2990D6F05D150 /* Pods_GRDBDemo.framework */; };
 		56B8C25C1CABEE6B00510325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C25B1CABEE6B00510325 /* AppDelegate.swift */; };
 		56B8C2611CABEE6B00510325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B8C25F1CABEE6B00510325 /* Main.storyboard */; };
 		56B8C2631CABEE6B00510325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56B8C2621CABEE6B00510325 /* Assets.xcassets */; };
@@ -15,11 +16,11 @@
 		56B8C2721CABEF1600510325 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C26E1CABEF1600510325 /* Person.swift */; };
 		56B8C2731CABEF1600510325 /* PersonEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C26F1CABEF1600510325 /* PersonEditionViewController.swift */; };
 		56B8C2741CABEF1600510325 /* PersonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C2701CABEF1600510325 /* PersonsViewController.swift */; };
-		C9134912546C552FCBF71A36 /* Pods_GRDBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887A2762F991F70B2F16E4FA /* Pods_GRDBDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B34F84E62B9AD336FFA8291 /* Pods-GRDBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GRDBDemo/Pods-GRDBDemo.release.xcconfig"; sourceTree = "<group>"; };
+		3DD0AD91FA9AB32D50B0427F /* Pods-GRDBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-GRDBDemo/Pods-GRDBDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4209AD2518F2990D6F05D150 /* Pods_GRDBDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRDBDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B8C2581CABEE6B00510325 /* GRDBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRDBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B8C25B1CABEE6B00510325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56B8C2601CABEE6B00510325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,9 +31,8 @@
 		56B8C26E1CABEF1600510325 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		56B8C26F1CABEF1600510325 /* PersonEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonEditionViewController.swift; sourceTree = "<group>"; };
 		56B8C2701CABEF1600510325 /* PersonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsViewController.swift; sourceTree = "<group>"; };
-		887A2762F991F70B2F16E4FA /* Pods_GRDBDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GRDBDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF1761EF5816B02B81EB734 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8409AE1610BF0F324661CA9 /* Pods-GRDBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GRDBDemo/Pods-GRDBDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F2098681A6E825E5F81EABC2 /* Pods-GRDBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GRDBDemo/Pods-GRDBDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,18 +40,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9134912546C552FCBF71A36 /* Pods_GRDBDemo.framework in Frameworks */,
+				2B85E5502C1EA864CB6D6834 /* Pods_GRDBDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0CBB5BDE111E77D80E409AB8 /* Pods */ = {
+		0D5AC731A80788522AD26CB5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E8409AE1610BF0F324661CA9 /* Pods-GRDBDemo.debug.xcconfig */,
-				2B34F84E62B9AD336FFA8291 /* Pods-GRDBDemo.release.xcconfig */,
+				F2098681A6E825E5F81EABC2 /* Pods-GRDBDemo.debug.xcconfig */,
+				3DD0AD91FA9AB32D50B0427F /* Pods-GRDBDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -62,7 +62,7 @@
 				56B8C25A1CABEE6B00510325 /* GRDBDemo */,
 				56B8C2591CABEE6B00510325 /* Products */,
 				C0888FA054F21C49EA45F0D7 /* Frameworks */,
-				0CBB5BDE111E77D80E409AB8 /* Pods */,
+				0D5AC731A80788522AD26CB5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				9DF1761EF5816B02B81EB734 /* Pods.framework */,
-				887A2762F991F70B2F16E4FA /* Pods_GRDBDemo.framework */,
+				4209AD2518F2990D6F05D150 /* Pods_GRDBDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,12 +106,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56B8C26A1CABEE6B00510325 /* Build configuration list for PBXNativeTarget "GRDBDemo" */;
 			buildPhases = (
-				FA9A237A4ADFA5D944850D47 /* [CP] Check Pods Manifest.lock */,
+				5EA7B14197A4E04F3313748C /* [CP] Check Pods Manifest.lock */,
 				56B8C2541CABEE6B00510325 /* Sources */,
 				56B8C2551CABEE6B00510325 /* Frameworks */,
 				56B8C2561CABEE6B00510325 /* Resources */,
-				0FCE96D8273356A2964FE323 /* [CP] Embed Pods Frameworks */,
-				C13DC42FA16FD145951E7122 /* [CP] Copy Pods Resources */,
+				EB9070C4B86C832321EB9152 /* [CP] Embed Pods Frameworks */,
+				18FE947F3FCA7C49219209E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,10 +129,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				TargetAttributes = {
 					56B8C2571CABEE6B00510325 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -168,22 +169,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FCE96D8273356A2964FE323 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GRDBDemo/Pods-GRDBDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C13DC42FA16FD145951E7122 /* [CP] Copy Pods Resources */ = {
+		18FE947F3FCA7C49219209E8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,7 +184,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GRDBDemo/Pods-GRDBDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA9A237A4ADFA5D944850D47 /* [CP] Check Pods Manifest.lock */ = {
+		5EA7B14197A4E04F3313748C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,7 +196,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB9070C4B86C832321EB9152 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GRDBDemo/Pods-GRDBDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -264,8 +265,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -309,8 +312,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -329,31 +334,36 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		56B8C26B1CABEE6B00510325 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8409AE1610BF0F324661CA9 /* Pods-GRDBDemo.debug.xcconfig */;
+			baseConfigurationReference = F2098681A6E825E5F81EABC2 /* Pods-GRDBDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GRDBDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GRDB.GRDBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		56B8C26C1CABEE6B00510325 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B34F84E62B9AD336FFA8291 /* Pods-GRDBDemo.release.xcconfig */;
+			baseConfigurationReference = 3DD0AD91FA9AB32D50B0427F /* Pods-GRDBDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GRDBDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GRDB.GRDBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -1,7 +1,7 @@
 import UIKit
 
 protocol PersonEditionViewControllerDelegate: class {
-    func personEditionControllerDidComplete(controller: PersonEditionViewController)
+    func personEditionControllerDidComplete(_ controller: PersonEditionViewController)
 }
 
 class PersonEditionViewController: UITableViewController {
@@ -10,12 +10,12 @@ class PersonEditionViewController: UITableViewController {
     var cancelButtonHidden: Bool = false { didSet { configureView() } }
     var commitButtonHidden: Bool = false { didSet { configureView() } }
 
-    @IBOutlet private weak var cancelBarButtonItem: UIBarButtonItem!
-    @IBOutlet private weak var commitBarButtonItem: UIBarButtonItem!
-    @IBOutlet private weak var nameCell: UITableViewCell!
-    @IBOutlet private weak var nameTextField: UITextField!
-    @IBOutlet private weak var scoreCell: UITableViewCell!
-    @IBOutlet private weak var scoreTextField: UITextField!
+    @IBOutlet fileprivate weak var cancelBarButtonItem: UIBarButtonItem!
+    @IBOutlet fileprivate weak var commitBarButtonItem: UIBarButtonItem!
+    @IBOutlet fileprivate weak var nameCell: UITableViewCell!
+    @IBOutlet fileprivate weak var nameTextField: UITextField!
+    @IBOutlet fileprivate weak var scoreCell: UITableViewCell!
+    @IBOutlet fileprivate weak var scoreTextField: UITextField!
     
     func applyChanges() {
         person.name = nameTextField.text ?? ""
@@ -27,8 +27,8 @@ class PersonEditionViewController: UITableViewController {
         configureView()
     }
     
-    private func configureView() {
-        guard isViewLoaded() else { return }
+    fileprivate func configureView() {
+        guard isViewLoaded else { return }
         
         nameTextField.text = person.name
         if person.score == 0 && person.id == nil {
@@ -56,20 +56,20 @@ class PersonEditionViewController: UITableViewController {
 
 extension PersonEditionViewController {
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         // Force keyboard to dismiss early
         view.endEditing(true)
         return true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Commit" {
             applyChanges()
         }
     }
     
-    override func willMoveToParentViewController(parent: UIViewController?) {
-        super.willMoveToParentViewController(parent)
+    override func willMove(toParentViewController parent: UIViewController?) {
+        super.willMove(toParentViewController: parent)
         
         if parent == nil {
             // Self is popping from its navigation controller
@@ -85,14 +85,14 @@ extension PersonEditionViewController {
 
 extension PersonEditionViewController: UITextFieldDelegate {
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nameTextField.becomeFirstResponder()
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let cell = tableView.cellForRow(at: indexPath)
         if cell === nameCell {
             nameTextField.becomeFirstResponder()
         } else if cell === scoreCell {
@@ -100,7 +100,7 @@ extension PersonEditionViewController: UITextFieldDelegate {
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameTextField {
             scoreTextField.becomeFirstResponder()
         }

@@ -14,16 +14,16 @@ class Person: Record {
     // MARK: Record overrides
     
     /// The table name
-    override class func databaseTableName() -> String {
+    override class var databaseTableName: String {
         return "persons"
     }
     
     /// Initialize from a database row
-    required init(_ row: Row) {
+    required init(row: Row) {
         id = row.value(named: "id")
         name = row.value(named: "name")
         score = row.value(named: "score")
-        super.init(row)
+        super.init(row: row)
     }
     
     /// The values persisted in the database
@@ -35,7 +35,7 @@ class Person: Record {
     }
     
     /// Update person id after successful insertion
-    override func didInsertWithRowID(rowID: Int64, forColumn column: String?) {
+    override func didInsert(with rowID: Int64, for column: String?) {
         id = rowID
     }
 }
