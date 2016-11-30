@@ -8,7 +8,7 @@ class PersonsViewController: UITableViewController {
         super.viewDidLoad()
         
         let request = personsSortedByScore
-        personsController = FetchedRecordsController(dbQueue, request: request, compareRecordsByPrimaryKey: true)
+        personsController = try! FetchedRecordsController(dbQueue, request: request, compareRecordsByPrimaryKey: true)
         personsController.trackChanges(
             recordsWillChange: { [unowned self] _ in
                 self.tableView.beginUpdates()
@@ -38,7 +38,7 @@ class PersonsViewController: UITableViewController {
             recordsDidChange: { [unowned self] _ in
                 self.tableView.endUpdates()
             })
-        personsController.performFetch()
+        try! personsController.performFetch()
         
         navigationItem.leftBarButtonItem = editButtonItem
         
@@ -144,19 +144,19 @@ extension PersonsViewController {
     
     @IBAction func sortByName() {
         setEditing(false, animated: true)
-        personsController.setRequest(personsSortedByName)
+        try! personsController.setRequest(personsSortedByName)
     }
     
     @IBAction func sortByScore() {
         setEditing(false, animated: true)
-        personsController.setRequest(personsSortedByScore)
+        try! personsController.setRequest(personsSortedByScore)
     }
     
     @IBAction func randomizeScores() {
         setEditing(false, animated: true)
         
         try! dbQueue.inTransaction { db in
-            for person in Person.fetch(db) {
+            for person in try Person.fetchAll(db) {
                 person.score = randomScore()
                 try person.update(db)
             }
@@ -171,7 +171,7 @@ extension PersonsViewController {
         for _ in 0..<20 {
             DispatchQueue.global().async {
                 try! dbQueue.inTransaction { db in
-                    if Person.fetchCount(db) == 0 {
+                    if try Person.fetchCount(db) == 0 {
                         // Insert persons
                         for _ in 0..<8 {
                             try Person(name: randomName(), score: randomScore()).insert(db)
@@ -184,12 +184,12 @@ extension PersonsViewController {
                         }
                         // Delete a person
                         if arc4random_uniform(2) == 0 {
-                            if let person = Person.order(sql: "RANDOM()").fetchOne(db) {
+                            if let person = try Person.order(sql: "RANDOM()").fetchOne(db) {
                                 try person.delete(db)
                             }
                         }
                         // Update some persons
-                        for person in Person.fetchAll(db) {
+                        for person in try Person.fetchAll(db) {
                             if arc4random_uniform(2) == 0 {
                                 person.score = randomScore()
                                 try person.update(db)
