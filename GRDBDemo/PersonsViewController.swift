@@ -8,13 +8,13 @@ class PersonsViewController: UITableViewController {
         super.viewDidLoad()
         
         let request = personsSortedByScore
-        personsController = try! FetchedRecordsController(dbQueue, request: request, compareRecordsByPrimaryKey: true)
+        personsController = try! FetchedRecordsController(dbQueue, request: request)
         personsController.trackChanges(
-            recordsWillChange: { [unowned self] _ in
+            willChange: { [unowned self] _ in
                 self.tableView.beginUpdates()
             },
-            tableViewEvent: { [unowned self] (controller, record, event) in
-                switch event {
+            onChange: { [unowned self] (controller, record, change) in
+                switch change {
                 case .insertion(let indexPath):
                     self.tableView.insertRows(at: [indexPath], with: .fade)
                     
@@ -35,7 +35,7 @@ class PersonsViewController: UITableViewController {
                     }
                 }
             },
-            recordsDidChange: { [unowned self] _ in
+            didChange: { [unowned self] _ in
                 self.tableView.endUpdates()
             })
         try! personsController.performFetch()
