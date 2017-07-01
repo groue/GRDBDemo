@@ -27,11 +27,10 @@ class Person: Record {
     }
     
     /// The values persisted in the database
-    override var persistentDictionary: [String : DatabaseValueConvertible?] {
-        return [
-            "id": id,
-            "name": name,
-            "score": score]
+    override func encode(to container: inout PersistenceContainer) {
+        container["id"] = id
+        container["name"] = name
+        container["score"] = score
     }
     
     /// Update person id after successful insertion
