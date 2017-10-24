@@ -11,10 +11,10 @@
 		56B8C2611CABEE6B00510325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B8C25F1CABEE6B00510325 /* Main.storyboard */; };
 		56B8C2631CABEE6B00510325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56B8C2621CABEE6B00510325 /* Assets.xcassets */; };
 		56B8C2661CABEE6B00510325 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B8C2641CABEE6B00510325 /* LaunchScreen.storyboard */; };
-		56B8C2711CABEF1600510325 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C26D1CABEF1600510325 /* Database.swift */; };
-		56B8C2721CABEF1600510325 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C26E1CABEF1600510325 /* Person.swift */; };
-		56B8C2731CABEF1600510325 /* PersonEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C26F1CABEF1600510325 /* PersonEditionViewController.swift */; };
-		56B8C2741CABEF1600510325 /* PersonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C2701CABEF1600510325 /* PersonsViewController.swift */; };
+		56B8C2711CABEF1600510325 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C26D1CABEF1600510325 /* AppDatabase.swift */; };
+		56B8C2721CABEF1600510325 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C26E1CABEF1600510325 /* Player.swift */; };
+		56B8C2731CABEF1600510325 /* PlayerEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C26F1CABEF1600510325 /* PlayerEditionViewController.swift */; };
+		56B8C2741CABEF1600510325 /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B8C2701CABEF1600510325 /* PlayersViewController.swift */; };
 		D99804C2C5173B8409CD9EA8 /* Pods_GRDBDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 335AFD8AEC19ECD044D97DC9 /* Pods_GRDBDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,10 +27,10 @@
 		56B8C2621CABEE6B00510325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56B8C2651CABEE6B00510325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56B8C2671CABEE6B00510325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56B8C26D1CABEF1600510325 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		56B8C26E1CABEF1600510325 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		56B8C26F1CABEF1600510325 /* PersonEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonEditionViewController.swift; sourceTree = "<group>"; };
-		56B8C2701CABEF1600510325 /* PersonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonsViewController.swift; sourceTree = "<group>"; };
+		56B8C26D1CABEF1600510325 /* AppDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		56B8C26E1CABEF1600510325 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		56B8C26F1CABEF1600510325 /* PlayerEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerEditionViewController.swift; sourceTree = "<group>"; };
+		56B8C2701CABEF1600510325 /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		9DF1761EF5816B02B81EB734 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B356438E86E7509FF0B7C2 /* Pods-GRDBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GRDBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GRDBDemo/Pods-GRDBDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,10 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				56B8C25B1CABEE6B00510325 /* AppDelegate.swift */,
-				56B8C26D1CABEF1600510325 /* Database.swift */,
-				56B8C26E1CABEF1600510325 /* Person.swift */,
-				56B8C26F1CABEF1600510325 /* PersonEditionViewController.swift */,
-				56B8C2701CABEF1600510325 /* PersonsViewController.swift */,
+				56B8C26D1CABEF1600510325 /* AppDatabase.swift */,
+				56B8C26E1CABEF1600510325 /* Player.swift */,
+				56B8C26F1CABEF1600510325 /* PlayerEditionViewController.swift */,
+				56B8C2701CABEF1600510325 /* PlayersViewController.swift */,
 				56B8C25F1CABEE6B00510325 /* Main.storyboard */,
 				56B8C2621CABEE6B00510325 /* Assets.xcassets */,
 				56B8C2641CABEE6B00510325 /* LaunchScreen.storyboard */,
@@ -129,10 +129,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				TargetAttributes = {
 					56B8C2571CABEE6B00510325 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = AMD8W895CT;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -175,13 +176,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GRDBDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A4972E2ADB43A74A4024D29F /* [CP] Copy Pods Resources */ = {
@@ -205,9 +209,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GRDBDemo/Pods-GRDBDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -221,10 +228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B8C2721CABEF1600510325 /* Person.swift in Sources */,
-				56B8C2711CABEF1600510325 /* Database.swift in Sources */,
-				56B8C2731CABEF1600510325 /* PersonEditionViewController.swift in Sources */,
-				56B8C2741CABEF1600510325 /* PersonsViewController.swift in Sources */,
+				56B8C2721CABEF1600510325 /* Player.swift in Sources */,
+				56B8C2711CABEF1600510325 /* AppDatabase.swift in Sources */,
+				56B8C2731CABEF1600510325 /* PlayerEditionViewController.swift in Sources */,
+				56B8C2741CABEF1600510325 /* PlayersViewController.swift in Sources */,
 				56B8C25C1CABEE6B00510325 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,14 +267,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -307,14 +320,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -345,12 +364,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AMD8W895CT;
 				INFOPLIST_FILE = GRDBDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = GRDB.GRDBDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.groue.GRDB.GRDBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -360,12 +380,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AMD8W895CT;
 				INFOPLIST_FILE = GRDBDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = GRDB.GRDBDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.groue.GRDB.GRDBDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

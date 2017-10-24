@@ -1,12 +1,12 @@
 import UIKit
 
-protocol PersonEditionViewControllerDelegate: class {
-    func personEditionControllerDidComplete(_ controller: PersonEditionViewController)
+protocol PlayerEditionViewControllerDelegate: class {
+    func playerEditionControllerDidComplete(_ controller: PlayerEditionViewController)
 }
 
-class PersonEditionViewController: UITableViewController {
-    weak var delegate: PersonEditionViewControllerDelegate?
-    var person: Person! { didSet { configureView() } }
+class PlayerEditionViewController: UITableViewController {
+    weak var delegate: PlayerEditionViewControllerDelegate?
+    var player: Player! { didSet { configureView() } }
     var cancelButtonHidden: Bool = false { didSet { configureView() } }
     var commitButtonHidden: Bool = false { didSet { configureView() } }
 
@@ -18,8 +18,12 @@ class PersonEditionViewController: UITableViewController {
     @IBOutlet fileprivate weak var scoreTextField: UITextField!
     
     func applyChanges() {
-        person.name = nameTextField.text ?? ""
-        person.score = scoreTextField.text.flatMap { Int($0) } ?? 0
+        guard var player = self.player else {
+            return
+        }
+        player.name = nameTextField.text ?? ""
+        player.score = scoreTextField.text.flatMap { Int($0) } ?? 0
+        self.player = player
     }
     
     override func viewDidLoad() {
@@ -30,11 +34,11 @@ class PersonEditionViewController: UITableViewController {
     fileprivate func configureView() {
         guard isViewLoaded else { return }
         
-        nameTextField.text = person.name
-        if person.score == 0 && person.id == nil {
+        nameTextField.text = player.name
+        if player.score == 0 && player.id == nil {
             scoreTextField.text = ""
         } else {
-            scoreTextField.text = "\(person.score)"
+            scoreTextField.text = "\(player.score)"
         }
     
         if cancelButtonHidden {
@@ -54,7 +58,7 @@ class PersonEditionViewController: UITableViewController {
 
 // MARK: - Navigation
 
-extension PersonEditionViewController {
+extension PlayerEditionViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         // Force keyboard to dismiss early
@@ -74,7 +78,7 @@ extension PersonEditionViewController {
         if parent == nil {
             // Self is popping from its navigation controller
             applyChanges()
-            delegate?.personEditionControllerDidComplete(self)
+            delegate?.playerEditionControllerDidComplete(self)
         }
     }
     
@@ -83,7 +87,7 @@ extension PersonEditionViewController {
 
 // MARK: - Form
 
-extension PersonEditionViewController: UITextFieldDelegate {
+extension PlayerEditionViewController: UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
